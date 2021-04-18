@@ -5,7 +5,7 @@ services:
     build:
       ./ansible-vmware
     volumes:
-      - ~/Documents/Automation:/home/ansible/Automation
+      - ./my-playbooks:/home/ansible/Automation
       - ~/.ssh:/home/ansible/.ssh
       - ~/.gitconfig:/home/ansible/.gitconfig
     stdin_open: true
