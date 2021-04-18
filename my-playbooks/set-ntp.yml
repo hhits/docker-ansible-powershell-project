@@ -1,0 +1,12 @@
+---
+- hosts: localhost
+  name: Deploy the VCSA to an ESXi Host
+
+  tasks:
+    - community.vmware.vmware_host_ntp_info:
+        hostname: "vc.virtuallywired.io"
+        username: "administrator@vsphere.local"
+        password: "VMware1!"
+        validate_certs: no
+        cluster_name: "vSphere-Cluster"
+      register: cluster_host_ntp
