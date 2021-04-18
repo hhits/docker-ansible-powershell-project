@@ -16,3 +16,5 @@ RUN apt-get update && \
   pip3 install --upgrade virtualenv && \
   pip3 install pyvmomi && \
   pip3 install ansible
+
+  

@@ -21,3 +21,5 @@
         validate_certs: no
         cluster_name: "vSphere-Cluster"
         ntp_servers: "{{ ntp_array_list }}"
+
+        
