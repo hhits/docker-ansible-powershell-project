@@ -1,0 +1,23 @@
+---
+- hosts: localhost
+  name: Add Management Network VM Portgroup to all hosts in a cluster
+  vars_files: answerfile.yml
+
+  tasks:
+    - vmware_portgroup:
+        hostname: "{{ vcenter_hostname }}.{{ domain }}"
+        username: "{{ vcenter_username }}"
+        password: "{{ vcenter_password }}"
+        cluster_name: "vSphere-Cluster"
+        switch: "vSwitch0"
+        portgroup: "FooPoo4"
+        vlan_id: "100"
+        validate_certs: no
+
+    - vmware_host_ntp:
+        hostname: "{{ vcenter_hostname }}.{{ domain }}"
+        username: "{{ vcenter_username }}"
+        password: "{{ vcenter_password }}"
+        validate_certs: no
+        cluster_name: "vSphere-Cluster"
+        ntp_servers: "{{ ntp_array_list }}"
