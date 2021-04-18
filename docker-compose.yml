@@ -3,7 +3,7 @@ version: '3'
 services:
   ansible-vmware-pwsh:
     build:
-      ./ansible2
+      ./ansible-vmware
     volumes:
       - ~/Documents/Automation:/home/ansible/Automation
       - ~/.ssh:/home/ansible/.ssh

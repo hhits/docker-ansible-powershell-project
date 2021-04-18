@@ -1,6 +1,6 @@
 ---
 - hosts: localhost
-  name: Add Management Network VM Portgroup to all hosts in a cluster
+  name: vSphere Management via Ansible Demonstration
   vars_files: answerfile.yml
 
   tasks:
