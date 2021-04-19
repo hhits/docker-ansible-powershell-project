@@ -15,6 +15,10 @@ RUN apt-get update && \
   pip3 install --upgrade pip && \
   pip3 install --upgrade virtualenv && \
   pip3 install pyvmomi && \
-  pip3 install ansible
+  pip3 install ansible && \
+  pwsh -c "Install-Module VMware.PowerCLI -Scope AllUsers -Force -confirm:\$False" && \
+  pwsh -c "Set-PowerCLIConfiguration -Scope AllUsers -ParticipateInCEIP \$False -confirm:\$False" && \
+  pwsh -c "Set-PowerCLICOnfiguration -Scope AllUsers -InvalidCertificateAction ignore -confirm:\$false" && \
+  pwsh -c "Set-PowerCLIConfiguration -Scope AllUsers -WebOperationTimeoutSeconds 3600 -confirm:\$false" && \
+  pwsh -c "Set-PowerCLIConfiguration -Scope AllUsers -DefaultVIServerMode multiple -confirm:\$false"
 
-  

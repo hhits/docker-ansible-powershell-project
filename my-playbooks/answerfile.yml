@@ -6,5 +6,7 @@ vcenter_username: 'administrator@vsphere.local'
 vcenter_password: 'VMware1!'
 vcenter_hostname: 'vc'
 domain: 'virtuallywired.io'
-ntp_array_list: ["0.au.pool.ntp.org", "1.au.pool.ntp.org""]
+cluster_name: "vSphere-Cluster"
+ntp_array_list: ["0.au.pool.ntp.org", "1.au.pool.ntp.org"]
+
 

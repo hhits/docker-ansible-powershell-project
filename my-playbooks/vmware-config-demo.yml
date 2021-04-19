@@ -4,22 +4,33 @@
   vars_files: answerfile.yml
 
   tasks:
+    # Create Standard Portgroup on VSS to all hosts in a specified Cluster.
     - vmware_portgroup:
         hostname: "{{ vcenter_hostname }}.{{ domain }}"
         username: "{{ vcenter_username }}"
         password: "{{ vcenter_password }}"
-        cluster_name: "vSphere-Cluster"
+        cluster_name: "{{ cluster_name }}"
         switch: "vSwitch0"
         portgroup: "FooPoo4"
         vlan_id: "100"
         validate_certs: no
 
+    # Updates NTP Addresses to all hosts in specified Cluster.
     - vmware_host_ntp:
         hostname: "{{ vcenter_hostname }}.{{ domain }}"
         username: "{{ vcenter_username }}"
         password: "{{ vcenter_password }}"
         validate_certs: no
-        cluster_name: "vSphere-Cluster"
+        cluster_name: "{{ cluster_name }}"
         ntp_servers: "{{ ntp_array_list }}"
-
-        
+    
+    # Enabled ntpd and set policy to "ON" to all hosts in specified Cluster.
+    - vmware_host_service_manager:
+        hostname: "{{ vcenter_hostname }}.{{ domain }}"
+        username: "{{ vcenter_username }}"
+        password: "{{ vcenter_password }}"
+        validate_certs: no
+        cluster_name: "{{ cluster_name }}"
+        service_name: ntpd
+        service_policy: on
+        state: present
