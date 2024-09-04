@@ -1,12 +1,10 @@
 ## VARIABLES ##
 
 esxi_username: 'root'
-esxi_password: 'VMware1!'
+esxi_password: 'P@ssw0rd'
 vcenter_username: 'administrator@vsphere.local'
-vcenter_password: 'VMware1!'
-vcenter_hostname: 'vc'
-domain: 'virtuallywired.io'
-cluster_name: "vSphere-Cluster"
-ntp_array_list: ["0.au.pool.ntp.org", "1.au.pool.ntp.org"]
-
-
+vcenter_password: 'P@ssw0rd'
+vcenter_hostname: 'vcenter'
+domain: 'hhitsolutions.com'
+cluster_name: "LAB-CL01"
+ntp_array_list: ["0.us.pool.ntp.org", "1.us.pool.ntp.org"]
